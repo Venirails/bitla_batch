@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NovBatch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   	<div class="content">
+		<div id="top">
+			<div class="topright">
+			 	<a href="#"><img src="/assets/sitemap.png" alt="Sitemap" /></a> ^ 
+			 	<a href="#"><img src="/assets/rss.png" alt="RSS" /></a>				
+			</div>
+		</div>
+		<div id="header">
+
+			<div class="headings">
+				<h1>My First Rails App</h1>
+				<h2>Logo here</h2>
+			</div>
+		</div>
+	
+			<div id="menu">
+			  	<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">link.three</a></li>
+					<li><a href="#">link.four</a></li>
+      				<li><a href="#">link.five</a></li>
+					<% if session[:admin].nil? %>
+      				<li><a href="/admin/login">Admin Login</a></li>
+                    <% else %>
+      				<li><a href="/admin/logout">Admin Logout</a></li>
+      			   <% end %>
+				</ul>
+			</div>	
+			
+		
+		<div id="main">
+			<div class="right">
+				
+				
+				<div class="nav">
+				<h2>Right Column</h2>
+				
+				<h2>More Links?</h2>
+					
+				</div>
+			</div>
+			<div class="left">
+				
+				
+						  <%= yield %>
+
+
+			</div>
+			
+		</div>
+		
+		<div id="footer">
+			<div class="info">
+				&copy; 2022 All rights reserved MyApp<br />
+			</div>
+		</div>
+	</div>
+
+  </body>
+</html>
